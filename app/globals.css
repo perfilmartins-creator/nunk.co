@@ -18,9 +18,6 @@ body {
 
 ::selection { background: rgba(255,255,255,0.1); }
 
-@media (pointer: fine) {
-  * { cursor: none !important; }
-}
 
 /* Nav links */
 .nav-link {
