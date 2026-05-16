@@ -4,188 +4,237 @@ import ContactForm from "./components/ContactForm";
 
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
-/* Hero — mais impactante */
-const HERO = "1nFTteO7ZYMLOUo7lJAGxv5QyIfuH-LCd";
+const HERO = "1pAgVVU0Xdv2dArfXkdZg9bdT7r9p6UXv"; // Revelation Studio 45
 
-/* Portfolio — fotos mais artísticas e dramáticas */
 const WORKS = [
-  { id: "1MVmalhEKqwghOtirT7dikUmomllSfgUE", label: "Studio" },
-  { id: "1fzUzSSymdT4eaR24vDcu0SwT8Kkut1-E", label: "Estúdio" },
-  { id: "1coJf6IOI7VnbQ-b2ioTpBnQlKyECvB4c", label: "Preto" },
-  { id: "1JK5GsAoESJKY7kdrsu0VbIPHiHMM4oPY", label: "Estúdio" },
-  { id: "1hEptcjLKcmy-_eyGrwzABcav7ljFRsoX", label: "Bianca" },
-  { id: "1zDJu9AoTbNiBT4UNSs9DqQPkSTCVv421", label: "Preto" },
-];
-
-const PACKAGES = [
-  { num: "01", name: "Essencial",  price: "R$ 450", detail: "40 min — 1 cenário" },
-  { num: "02", name: "Editorial",  price: "R$ 600", detail: "1h30 — até 3 looks — todas as fotos editadas", featured: true },
-  { num: "03", name: "Campanha",   price: "Consulta", detail: "Sessão completa — fotos + 2 vídeos" },
+  { id: "1ATIF6r2pMW44zS8sJr1L4a5Pyus_0hg-" }, // PRETO GALVAO-27
+  { id: "1j9YeeM-au-ErouyC88zpfKdeVdWmwmOY" }, // Revelation 53
+  { id: "1vwWxe-cRST2bafcMH7Rjsy4PindcwnPQ" }, // PRETO GALVAO-32
+  { id: "1z7z_0mCQxpodaR04I5G8panxCZiz7oVr" }, // Revelation 68
+  { id: "1nFTteO7ZYMLOUo7lJAGxv5QyIfuH-LCd" }, // Livia _DSC7452
+  { id: "1ToGja1HwvLOEZ6gr0BWXzYnQVJUKy9Yf" }, // PRETO GALVAO-29
+  { id: "1hEptcjLKcmy-_eyGrwzABcav7ljFRsoX" }, // BIANCA-94
+  { id: "1DNB3K8ox5JmS5KD-Jk_m2RTvNU8wBM41" }, // Revelation 02
 ];
 
 export default function Home() {
   return (
     <>
-      <div className="grain" aria-hidden />
       <Loader />
 
-      {/* ── NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-12 py-7"
-        style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, transparent 100%)" }}>
-        <span className="text-[10px] tracking-[0.5em] uppercase font-medium opacity-40">
-          Recife
-        </span>
-        <span className="text-[11px] tracking-[0.55em] uppercase font-semibold">
-          NUNK
-        </span>
-        <a href="#contato"
-          className="text-[10px] tracking-[0.4em] uppercase font-medium opacity-40 hover:opacity-90 transition-opacity duration-300">
-          Orçamento
-        </a>
+      {/* ─────────────────────── NAV ─────────────────────── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-8 md:px-14 py-8">
+        <div className="flex items-center justify-between">
+          {/* Left links */}
+          <div className="flex items-center gap-8">
+            <a href="#portfolio"
+              className="text-[11px] tracking-[0.3em] uppercase font-medium opacity-40 hover:opacity-100 transition-opacity duration-300">
+              Trabalhos
+            </a>
+            <a href="#sessoes"
+              className="text-[11px] tracking-[0.3em] uppercase font-medium opacity-40 hover:opacity-100 transition-opacity duration-300">
+              Sessões
+            </a>
+          </div>
+
+          {/* Logo — center */}
+          <span className="text-[13px] tracking-[0.65em] uppercase font-bold absolute left-1/2 -translate-x-1/2">
+            NUNK
+          </span>
+
+          {/* Right links */}
+          <div className="flex items-center gap-8">
+            <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
+              className="text-[11px] tracking-[0.3em] uppercase font-medium opacity-40 hover:opacity-100 transition-opacity duration-300">
+              Instagram
+            </a>
+            <a href="#contato"
+              className="text-[11px] tracking-[0.3em] uppercase font-medium opacity-40 hover:opacity-100 transition-opacity duration-300 border border-white/20 px-5 py-2.5 hover:border-white/60">
+              Contato
+            </a>
+          </div>
+        </div>
       </nav>
 
-      {/* ── HERO ── */}
-      <section className="relative h-screen min-h-[640px] flex items-end overflow-hidden">
+      {/* ─────────────────────── HERO ─────────────────────── */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Photo */}
         <img
           src={G(HERO)}
-          alt="NUNK"
+          alt="NUNK fotografia"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "50% 30%" }}
+          style={{ objectPosition: "50% 40%" }}
         />
-        {/* gradients */}
+        {/* Overlay */}
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to top, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.3) 55%, rgba(5,5,5,0.15) 100%)"
+          background: "linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.55) 100%)"
         }} />
 
-        <div className="relative z-10 w-full px-8 md:px-12 pb-16 md:pb-20 flex flex-col items-center text-center gap-4">
-          <h1 className="text-5xl md:text-[clamp(52px,7vw,96px)] font-bold leading-[0.95] tracking-tight">
-            fotografia<br />
-            <span className="font-light opacity-60">humanizada</span>
-          </h1>
-          <p className="text-[10px] tracking-[0.45em] uppercase opacity-30 mt-2">
-            Estúdio · Recife, PE
+        {/* Hero copy — center screen */}
+        <div className="relative z-10 text-center px-6">
+          <p className="text-[10px] tracking-[0.55em] uppercase font-medium opacity-40 mb-8">
+            NUNK · Recife
           </p>
-        </div>
-
-        {/* scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-20">
-          <div className="w-px h-12 bg-white/40" style={{ animation: "pulse 2s ease infinite" }} />
+          <h1 className="text-[clamp(48px,8vw,110px)] font-bold leading-[0.9] tracking-tighter">
+            fotografia
+            <br />
+            <span className="font-light opacity-50">humanizada</span>
+          </h1>
+          <p className="mt-10 text-[11px] tracking-[0.35em] uppercase font-medium opacity-30">
+            ↓ ver trabalhos
+          </p>
         </div>
       </section>
 
-      {/* ── STATEMENT ── */}
-      <section className="px-6 md:px-12 py-32 md:py-48 flex justify-center">
-        <Reveal className="max-w-3xl text-center">
-          <p className="text-3xl md:text-[clamp(28px,4vw,52px)] font-medium leading-tight tracking-tight">
+      {/* ─────────────────────── STATEMENT ─────────────────────── */}
+      <section className="py-40 md:py-56 px-6 flex justify-center">
+        <Reveal className="text-center max-w-3xl">
+          <p className="text-[clamp(22px,3.5vw,44px)] font-semibold leading-snug tracking-tight">
             Num mundo onde qualquer imagem<br className="hidden md:block" /> pode ser gerada por IA,
           </p>
-          <p className="text-3xl md:text-[clamp(28px,4vw,52px)] font-light opacity-35 leading-tight tracking-tight mt-2">
-            a sua presença real é o diferencial.
+          <p className="text-[clamp(22px,3.5vw,44px)] font-light opacity-30 leading-snug tracking-tight">
+            a presença real é o diferencial.
           </p>
-        </Reveal>
-      </section>
-
-      {/* ── QUEM ATENDEMOS ── */}
-      <section className="px-6 md:px-12 py-4 pb-32">
-        <Reveal delay={0.1} className="max-w-2xl mx-auto">
-          <div className="h-px bg-white/06 mb-12" />
-          <div className="grid grid-cols-3 gap-px bg-white/06">
-            {[
-              { t: "Profissionais", d: "Médicos, advogados, coaches e consultores que precisam de imagem que transmite credibilidade real." },
-              { t: "Criadores",     d: "Criadores de conteúdo que querem elevar o padrão visual. Fotos com identidade, não produção genérica." },
-              { t: "Marcas",        d: "Pequenas marcas e negócios que precisam de material visual com personalidade e propósito." },
-            ].map((item) => (
-              <div key={item.t} className="bg-[#050505] p-8 flex flex-col gap-3">
-                <span className="text-[10px] tracking-[0.35em] uppercase font-semibold opacity-50">{item.t}</span>
-                <p className="text-xs font-medium opacity-30 leading-relaxed">{item.d}</p>
-              </div>
-            ))}
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <div className="h-px w-12 bg-white/15" />
+            <span className="text-[10px] tracking-[0.4em] uppercase opacity-30">NUNK entrega isso.</span>
+            <div className="h-px w-12 bg-white/15" />
           </div>
         </Reveal>
       </section>
 
-      {/* ── PORTFOLIO ── */}
-      <section id="portfolio" className="px-4 md:px-8 pb-32">
-        <Reveal className="text-center mb-10">
-          <span className="text-[10px] tracking-[0.45em] uppercase font-medium opacity-20">Trabalhos</span>
+      {/* ─────────────────────── PARA QUEM ─────────────────────── */}
+      <section className="pb-40 px-6">
+        <Reveal>
+          <div className="max-w-2xl mx-auto border-t border-white/06">
+            <div className="grid grid-cols-3 divide-x divide-white/06">
+              {[
+                { t: "Profissionais",  d: "Médicos, advogados, coaches. Imagem que transmite credibilidade." },
+                { t: "Criadores",      d: "Criadores de conteúdo com identidade. Fotos que comunicam." },
+                { t: "Marcas",         d: "Negócios que precisam de visual com propósito e personalidade." },
+              ].map((item) => (
+                <div key={item.t} className="py-10 px-8 text-center">
+                  <p className="text-[10px] tracking-[0.35em] uppercase font-semibold opacity-40 mb-3">{item.t}</p>
+                  <p className="text-[11px] font-medium opacity-25 leading-relaxed">{item.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ─────────────────────── PORTFOLIO ─────────────────────── */}
+      <section id="portfolio" className="pb-40 px-4 md:px-6">
+        <Reveal className="text-center mb-16">
+          <span className="text-[10px] tracking-[0.55em] uppercase font-medium opacity-20">Trabalhos</span>
         </Reveal>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-1">
-          {WORKS.map((w, i) => (
-            <Reveal key={w.id} delay={i * 0.06} className={i === 0 || i === 4 ? "col-span-2 md:col-span-1" : ""}>
-              <div className="img-wrap" style={{ aspectRatio: "3/4" }}>
-                <img src={G(w.id)} alt={w.label} loading="lazy" />
-              </div>
-            </Reveal>
-          ))}
+        {/* Asymmetric editorial grid — centered max-width */}
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-12 gap-1.5">
+          {/* Row 1: big + small */}
+          <Reveal delay={0}    className="md:col-span-7">
+            <div className="img-wrap" style={{ aspectRatio: "4/5" }}>
+              <img src={G(WORKS[0].id)} alt="" loading="lazy" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}  className="md:col-span-5 flex flex-col gap-1.5">
+            <div className="img-wrap" style={{ aspectRatio: "1/1" }}>
+              <img src={G(WORKS[1].id)} alt="" loading="lazy" />
+            </div>
+            <div className="img-wrap flex-1" style={{ aspectRatio: "1/1" }}>
+              <img src={G(WORKS[2].id)} alt="" loading="lazy" />
+            </div>
+          </Reveal>
+          {/* Row 2: small + big */}
+          <Reveal delay={0.05} className="md:col-span-5 flex flex-col gap-1.5">
+            <div className="img-wrap" style={{ aspectRatio: "1/1" }}>
+              <img src={G(WORKS[3].id)} alt="" loading="lazy" />
+            </div>
+            <div className="img-wrap flex-1" style={{ aspectRatio: "1/1" }}>
+              <img src={G(WORKS[4].id)} alt="" loading="lazy" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}  className="md:col-span-7">
+            <div className="img-wrap" style={{ aspectRatio: "4/5" }}>
+              <img src={G(WORKS[5].id)} alt="" loading="lazy" />
+            </div>
+          </Reveal>
+          {/* Row 3: full width */}
+          <Reveal delay={0.05} className="col-span-2 md:col-span-12">
+            <div className="img-wrap" style={{ aspectRatio: "21/9" }}>
+              <img src={G(WORKS[6].id)} alt="" loading="lazy" style={{ objectPosition: "50% 30%" }} />
+            </div>
+          </Reveal>
         </div>
 
-        <Reveal delay={0.2} className="text-center mt-10">
-          <a href="https://www.instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
-            className="text-[10px] tracking-[0.45em] uppercase font-medium opacity-20 hover:opacity-60 transition-opacity">
-            Ver mais @nunk.co ↗
+        <Reveal delay={0.2} className="text-center mt-12">
+          <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
+            className="text-[10px] tracking-[0.45em] uppercase font-medium opacity-25 hover:opacity-70 transition-opacity">
+            Mais em @nunk.co ↗
           </a>
         </Reveal>
       </section>
 
-      {/* ── SESSÕES ── */}
-      <section id="sessoes" className="px-6 md:px-12 pb-32">
-        <div className="max-w-3xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase font-medium opacity-20">Sessões</span>
-          </Reveal>
+      {/* ─────────────────────── SESSÕES ─────────────────────── */}
+      <section id="sessoes" className="pb-40 px-6 border-t border-white/06">
+        <Reveal className="text-center py-16">
+          <span className="text-[10px] tracking-[0.55em] uppercase font-medium opacity-20">Sessões</span>
+        </Reveal>
 
-          <div className="flex flex-col">
-            {PACKAGES.map((pkg, i) => (
-              <Reveal key={pkg.num} delay={i * 0.1}>
-                <div className="group border-t border-white/06 py-8 grid grid-cols-12 items-center gap-4 hover:border-white/20 transition-colors">
-                  <span className="col-span-1 text-[10px] font-medium opacity-20">{pkg.num}</span>
-                  <div className="col-span-4">
-                    <span className="text-sm font-semibold tracking-wide">
-                      {pkg.name}
-                      {pkg.featured && <span className="ml-2 text-[8px] tracking-widest uppercase opacity-30">popular</span>}
-                    </span>
+        <div className="max-w-2xl mx-auto">
+          {[
+            { num: "01", name: "Essencial",  price: "R$ 450",    detail: "40 min · 1 cenário · fotos editadas · direção de poses" },
+            { num: "02", name: "Editorial",  price: "R$ 600",    detail: "1h30 · até 3 looks · todas as fotos editadas · direção criativa",  featured: true },
+            { num: "03", name: "Campanha",   price: "Consulta",  detail: "Sessão completa · fotos + 2 vídeos · making of" },
+          ].map((pkg, i) => (
+            <Reveal key={pkg.num} delay={i * 0.1}>
+              <div className="border-t border-white/06 py-8 flex items-start md:items-center gap-6 md:gap-0 flex-col md:flex-row hover:border-white/20 transition-colors group">
+                <span className="text-[10px] font-medium opacity-15 w-8 shrink-0">{pkg.num}</span>
+                <div className="flex-1 flex flex-col md:flex-row md:items-center gap-2 md:gap-0">
+                  <div className="md:w-48 flex items-center gap-3">
+                    <span className="text-base font-bold tracking-tight">{pkg.name}</span>
+                    {pkg.featured && <span className="text-[8px] tracking-widest uppercase opacity-25 border border-white/10 px-2 py-0.5">popular</span>}
                   </div>
-                  <p className="col-span-5 text-[11px] font-medium opacity-30 leading-relaxed">{pkg.detail}</p>
-                  <div className="col-span-2 text-right">
-                    <span className="text-sm font-semibold">{pkg.price}</span>
-                  </div>
+                  <p className="text-[11px] font-medium opacity-30 flex-1">{pkg.detail}</p>
                 </div>
-              </Reveal>
-            ))}
-            <div className="border-t border-white/06" />
-          </div>
+                <span className="text-lg font-bold tracking-tight">{pkg.price}</span>
+              </div>
+            </Reveal>
+          ))}
+          <div className="border-t border-white/06" />
 
-          <Reveal delay={0.3} className="text-center mt-10">
+          <Reveal delay={0.3} className="text-center mt-14">
             <a href="#contato"
-              className="inline-block text-[10px] tracking-[0.4em] uppercase font-semibold py-4 px-10 border border-white/15 hover:bg-white hover:text-black transition-all duration-300">
+              className="inline-block text-[10px] tracking-[0.4em] uppercase font-bold py-4 px-12 bg-white text-black hover:bg-white/90 transition-colors">
               Solicitar sessão
             </a>
           </Reveal>
         </div>
       </section>
 
-      {/* ── CONTATO ── */}
-      <section id="contato" className="px-6 md:px-12 py-32 border-t border-white/06">
-        <div className="max-w-lg mx-auto text-center">
-          <Reveal>
-            <span className="text-[10px] tracking-[0.45em] uppercase font-medium opacity-20 block mb-6">Orçamento</span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              vamos fazer<br />algo real
-            </h2>
-            <p className="text-xs font-medium opacity-30 mb-14">
-              Respondo em até 2h · Recife, PE
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
+      {/* ─────────────────────── CONTATO ─────────────────────── */}
+      <section id="contato" className="pb-40 px-6 border-t border-white/06">
+        <Reveal className="text-center py-16 mb-6">
+          <span className="text-[10px] tracking-[0.55em] uppercase font-medium opacity-20">Contato</span>
+        </Reveal>
+        <Reveal delay={0.1} className="text-center mb-16">
+          <h2 className="text-[clamp(36px,5vw,72px)] font-bold tracking-tight leading-none">
+            vamos fazer<br />algo real
+          </h2>
+          <p className="mt-5 text-[11px] font-medium opacity-25 tracking-wide">
+            Respondo em até 2h · Recife, PE
+          </p>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <div className="max-w-md mx-auto">
             <ContactForm />
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="px-8 md:px-12 py-8 border-t border-white/06 flex items-center justify-between">
-        <span className="text-[10px] tracking-[0.5em] uppercase font-semibold opacity-20">NUNK</span>
+      {/* ─────────────────────── FOOTER ─────────────────────── */}
+      <footer className="px-8 md:px-14 py-8 border-t border-white/06 flex items-center justify-between">
+        <span className="text-[11px] tracking-[0.5em] uppercase font-bold opacity-20">NUNK</span>
         <span className="text-[10px] font-medium opacity-15">© 2026</span>
       </footer>
     </>
