@@ -22,6 +22,17 @@ body {
   * { cursor: none !important; }
 }
 
+/* Nav links */
+.nav-link {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+.nav-link:hover { opacity: 1; }
+
 /* Image hover scale */
 .img-wrap { overflow: hidden; }
 .img-wrap img {
