@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 // Hero uses local file from public/
@@ -63,13 +63,7 @@ const navLink: React.CSSProperties = { fontSize: 13, letterSpacing: "0.25em", te
 const divider: React.CSSProperties = { borderTop: "1px solid rgba(255,255,255,0.08)" };
 
 export default function Home() {
-  const [ready, setReady] = useState(false);
   const [form, setForm] = useState({ nome: "", whatsapp: "", pacote: "", msg: "" });
-
-  useEffect(() => {
-    const t = setTimeout(() => setReady(true), 2300);
-    return () => clearTimeout(t);
-  }, []);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -81,22 +75,6 @@ export default function Home() {
 
   return (
     <>
-      {/* LOADER */}
-      <AnimatePresence>
-        {!ready && (
-          <motion.div key="loader" exit={{ opacity: 0 }} transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            style={{ position: "fixed", inset: 0, zIndex: 500, background: "#050505", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ overflow: "hidden" }}>
-              <motion.span initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
-                style={{ display: "block", fontSize: 14, letterSpacing: "0.7em", textTransform: "uppercase", fontWeight: 600, color: "rgba(240,240,240,0.8)" }}>
-                NUNK
-              </motion.span>
-            </div>
-            <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.6, ease: "linear", delay: 0.3 }}
-              style={{ marginTop: 28, height: 1, width: 56, background: "rgba(255,255,255,0.2)", transformOrigin: "left" }} />
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, padding: "28px 72px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "linear-gradient(to bottom, rgba(5,5,5,0.85) 0%, transparent 100%)" }}>
