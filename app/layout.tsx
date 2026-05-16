@@ -1,25 +1,18 @@
 import type { Metadata } from "next";
-import { Poppins, Cormorant_Garamond } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const syne = Syne({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-poppins",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
 });
 
 export const metadata: Metadata = {
-  title: "NUNK — Fotografia de Estúdio · Recife",
-  description: "Fotografia humanizada para profissionais, criadores e marcas. Recife.",
+  title: "NUNK — Fotografia · Recife",
+  description: "Fotografia humanizada para profissionais, criadores e marcas em Recife.",
   openGraph: {
-    title: "NUNK — Fotografia de Estúdio · Recife",
+    title: "NUNK — Fotografia · Recife",
     description: "Fotografia humanizada para profissionais, criadores e marcas.",
     type: "website",
   },
@@ -27,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${poppins.variable} ${cormorant.variable} h-full`}>
-      <body className="min-h-full">{children}</body>
+    <html lang="pt-BR" className={`${syne.variable} h-full`}>
+      <body className="min-h-full bg-[#050505] text-[#f0f0f0] antialiased">{children}</body>
     </html>
   );
 }
