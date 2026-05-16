@@ -8,7 +8,7 @@ const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 const GALLERY = [
   "1MBnVVO5PvO-mWVO7BX8Av00xWjAYfTRC",
   "1FpjiUuSrywjMeXMvGm-m7AzuOiskIRlA",
-  "1JUyC7xTbJwKaHmfRN4bSfSh7Ci6LBx3I",
+  "1vuOE0NvXYWN4jrvfeBFq4PILLbbQ9Fdo",
   "1lPUleiIBCaN5rzX4Uv0HxVmfyoACbM1z",
   "1Iu6G4RAVc248nTY5Kfo1VO5_awCXXn-g",
   "1vwWxe-cRST2bafcMH7Rjsy4PindcwnPQ",
