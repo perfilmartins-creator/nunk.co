@@ -121,7 +121,7 @@ export default function Home() {
           Num mundo saturado de imagens artificiais,<br />a sua presença real é o diferencial.
         </p>
         <p style={{ fontSize: "clamp(16px, 1.8vw, 22px)", fontWeight: 300, opacity: 0.35, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-          Cada pessoa carrega uma presença única. A NUNK existe para registrar isso — com direção, intenção e cuidado — para profissionais, criadores e marcas que levam a própria imagem a sério.
+          A Imagem comunica antes mesmo da fala. A NUNK nasce para transformar presença em narrativa, com direção criativa, intenção e estética para profissionais, criadores e marcas que entendem o valor da própria imagem.
         </p>
       </section>
 
