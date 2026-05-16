@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e8e8e8;
+  --accent: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: rgba(255, 255, 255, 0.38);
+  --faint: rgba(255, 255, 255, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.portfolio-grid {
+  columns: 3;
+  column-gap: 8px;
+}
+
+.portfolio-grid img {
+  break-inside: avoid;
+  margin-bottom: 8px;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-grid {
+    columns: 1;
+  }
+}
