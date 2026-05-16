@@ -44,7 +44,7 @@ const PACKAGES = [
     name: "Campanha",
     price: "Consulta",
     tagline: "Para marcas e projetos que precisam de visual com propósito.",
-    items: ["Sessão editorial completa", "2 vídeos verticais editados", "Making of", "Planejamento criativo", "Entrega em até 14 dias"],
+    items: ["Sessão editorial completa", "Vídeos verticais editados", "Making of", "Planejamento criativo"],
     ideal: "lançamentos · marcas · campanhas digitais",
   },
 ];
