@@ -158,7 +158,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
         <img src="/hero.jpg" alt="NUNK" className="hero-img" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.25) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.6) 100%)" }} />
         <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 24px", width: "100%" }}>
           <h1 style={{ fontSize: "clamp(52px, 10vw, 148px)", fontWeight: 700, lineHeight: 0.88, letterSpacing: "-0.02em", margin: 0 }}>
             fotografia<br />
