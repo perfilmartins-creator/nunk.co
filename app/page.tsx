@@ -83,7 +83,7 @@ export default function Home() {
           <a href="#sessoes"   style={navLink} onMouseEnter={hover("1")} onMouseLeave={hover("0.35")}>Sessões</a>
           <a href="#processo"  style={navLink} onMouseEnter={hover("1")} onMouseLeave={hover("0.35")}>Como funciona</a>
         </div>
-        <span style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", fontSize: 15, letterSpacing: "0.65em", textTransform: "uppercase", fontWeight: 700 }}>NUNK</span>
+        <img src="/logo-nome.png" alt="NUNK" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", height: 28, width: "auto", objectFit: "contain" }} />
         <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
           <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer" style={navLink} onMouseEnter={hover("1")} onMouseLeave={hover("0.35")}>Instagram</a>
           <a href="#contato" style={{ ...navLink, border: "1px solid rgba(255,255,255,0.2)", padding: "11px 24px" }}
@@ -288,7 +288,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "36px 72px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <span style={{ fontSize: 13, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>NUNK</span>
+        <img src="/logo-nome.png" alt="NUNK" style={{ height: 20, width: "auto", objectFit: "contain", opacity: 0.3 }} />
         <span style={{ fontSize: 13, opacity: 0.15, fontWeight: 400 }}>Fotografia humanizada · Recife, PE</span>
         <span style={{ fontSize: 13, fontWeight: 400, opacity: 0.15 }}>© 2026</span>
       </footer>
