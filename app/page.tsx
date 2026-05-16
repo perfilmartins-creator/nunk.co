@@ -168,7 +168,7 @@ export default function Home() {
             NUNK · Recife, PE
           </p>
           <a href="#contato" className="hero-cta"
-            style={{ background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 800, textDecoration: "none", transition: "background 0.2s" }}
+            style={{ background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
             onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
             onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
             Quero agendar meu ensaio
@@ -308,7 +308,7 @@ export default function Home() {
               onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.35)")}
               onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")} />
             <button type="submit"
-              style={{ width: "100%", padding: "18px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 800, border: "none", fontFamily: "inherit", cursor: "pointer", transition: "background 0.2s", marginTop: 4 }}
+              style={{ width: "100%", padding: "18px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, border: "none", fontFamily: "inherit", cursor: "pointer", transition: "background 0.2s", marginTop: 4 }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
               Solicitar via WhatsApp
