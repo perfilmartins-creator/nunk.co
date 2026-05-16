@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 const GALLERY = [
@@ -48,8 +46,6 @@ const PROCESS = [
   { n: "03", title: "Sessão",   body: "O dia da foto. Com direção, referências e um ambiente criativo do início ao fim." },
   { n: "04", title: "Entrega",  body: "Suas fotos editadas e prontas para usar onde mais importa para você." },
 ];
-
-const MARQUEE_WORDS = ["Fotografia Humanizada", "Recife, PE", "Profissionais", "Marcas", "Criadores", "Editorial", "Campanha", "Identidade Visual"];
 
 export default function Home() {
   const [form, setForm] = useState({ nome: "", whatsapp: "", pacote: "", msg: "" });
@@ -119,7 +115,7 @@ export default function Home() {
 
           /* Hero */
           .hero-cta { display: block; width: 100%; text-align: center; padding: 18px 24px; margin-top: 40px; box-sizing: border-box; }
-          .hero-img { object-position: 52% 8%; }
+          .hero-img { object-position: 50% 30%; }
 
           /* Footer */
           .footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
@@ -172,7 +168,7 @@ export default function Home() {
             NUNK · Recife, PE
           </p>
           <a href="#contato" className="hero-cta"
-            style={{ background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
+            style={{ background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 800, textDecoration: "none", transition: "background 0.2s" }}
             onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
             onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
             Quero agendar meu ensaio
@@ -191,19 +187,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* MARQUEE */}
-      <div style={{ overflow: "hidden", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "18px 0" }}>
-        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 26, ease: "linear", repeat: Infinity }}
-          style={{ display: "flex", gap: 64, whiteSpace: "nowrap", width: "max-content" }}>
-          {[...MARQUEE_WORDS, ...MARQUEE_WORDS].map((w, i) => (
-            <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 64 }}>
-              <span style={{ fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>{w}</span>
-              <span style={{ opacity: 0.12, fontSize: 6, fontFamily: "sans-serif" }}>·</span>
-            </span>
-          ))}
-        </motion.div>
-      </div>
 
       {/* GALERIA */}
       <section id="trabalhos" style={{ paddingTop: "var(--pad-y)", paddingBottom: 80 }}>
@@ -325,7 +308,7 @@ export default function Home() {
               onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.35)")}
               onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")} />
             <button type="submit"
-              style={{ width: "100%", padding: "18px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, border: "none", fontFamily: "inherit", cursor: "pointer", transition: "background 0.2s", marginTop: 4 }}
+              style={{ width: "100%", padding: "18px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 800, border: "none", fontFamily: "inherit", cursor: "pointer", transition: "background 0.2s", marginTop: 4 }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
               Solicitar via WhatsApp
