@@ -116,13 +116,15 @@ export default function Home() {
       </section>
 
       {/* MANIFESTO */}
-      <section style={{ padding: "140px 72px", maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
-        <p style={{ fontSize: "clamp(28px, 3.5vw, 52px)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.01em", marginBottom: 32 }}>
-          Num mundo saturado de imagens artificiais,<br />a sua presença real é o diferencial.
-        </p>
-        <p style={{ fontSize: "clamp(16px, 1.8vw, 22px)", fontWeight: 300, opacity: 0.35, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-          A Imagem comunica antes mesmo da fala. A NUNK nasce para transformar presença em narrativa, com direção criativa, intenção e estética para profissionais, criadores e marcas que entendem o valor da própria imagem.
-        </p>
+      <section style={{ padding: "96px 72px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <p style={{ fontSize: "clamp(22px, 2.4vw, 36px)", fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.01em", margin: 0 }}>
+            Num mundo saturado de imagens artificiais, a sua presença real é o diferencial.
+          </p>
+          <p style={{ fontSize: 15, fontWeight: 400, opacity: 0.35, lineHeight: 1.85, margin: 0 }}>
+            A Imagem comunica antes mesmo da fala. A NUNK nasce para transformar presença em narrativa, com direção criativa, intenção e estética para profissionais, criadores e marcas que entendem o valor da própria imagem.
+          </p>
+        </div>
       </section>
 
       {/* MARQUEE */}
