@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
-const HERO_IMG = "1pAgVVU0Xdv2dArfXkdZg9bdT7r9p6UXv";
+// Hero uses local file from public/
 
 const GALLERY = [
   "1hEptcjLKcmy-_eyGrwzABcav7ljFRsoX",
@@ -118,7 +118,7 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-        <img src={G(HERO_IMG)} alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%" }} />
+        <img src="/hero.jpg" alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", filter: "grayscale(100%)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.6) 100%)" }} />
         <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 32px" }}>
           <h1 style={{ fontSize: "clamp(64px, 10vw, 148px)", fontWeight: 700, lineHeight: 0.88, letterSpacing: "-0.02em", margin: 0 }}>
