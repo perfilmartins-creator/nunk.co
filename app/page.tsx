@@ -7,18 +7,18 @@ const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 // Hero uses local file from public/
 
 const GALLERY = [
-  "1hEptcjLKcmy-_eyGrwzABcav7ljFRsoX",
-  "1ATIF6r2pMW44zS8sJr1L4a5Pyus_0hg-",
-  "1nFTteO7ZYMLOUo7lJAGxv5QyIfuH-LCd",
-  "1j9YeeM-au-ErouyC88zpfKdeVdWmwmOY",
-  "1r6oR0nl7E_RWGGWuir8lbobCJeKN4fQF",
-  "1xINUgZcIj8OhHSBPIdsau8NvLb2wFfVY",
-  "1bnlQIdFvqDw135zak1K1D-fW6AR6aW6_",
-  "1DNB3K8ox5JmS5KD-Jk_m2RTvNU8wBM41",
-  "1F9SSYZYO_yZ0g1vAPAL4s_XBnS1AOGa-",
-  "1fzUzSSymdT4eaR24vDcu0SwT8Kkut1-E",
-  "1mfQnvsXj-Fez4-0Lv6KeRM2Ze9X9Ah_x",
-  "1z7z_0mCQxpodaR04I5G8panxCZiz7oVr",
+  "1JUyC7xTbJwKaHmfRN4bSfSh7Ci6LBx3I", // BIANCA-93 — 17MB, editorial 2025
+  "1iBgn05m2uoPWqlYybeUOyDn8xO7QfVfP", // BIANCA-90 — 16MB, look alternativo
+  "1lwKJuh-L57hNRkwR3cttmVS8kvNMEaev", // BIANCA-86 — 16MB
+  "1lPUleiIBCaN5rzX4Uv0HxVmfyoACbM1z", // ALICE DSC01601 — 14.5MB
+  "1FB3yfkkIRudsYfEnjbwtlccSfVqorS49", // ALICE DSC01549 — 14.8MB
+  "1OjF90oXFqUeXbi81c0-5NGJXIKj45r3u", // ALICE DSC01638 — 12.6MB
+  "1Iu6G4RAVc248nTY5Kfo1VO5_awCXXn-g", // LIVIA & JÚLIA _DSC7451 — 11MB
+  "13lUDq5up5KuIwgA9aQmZLJQu-gi37cfM", // LIVIA & JÚLIA _DSC7435 — 12MB
+  "1MBnVVO5PvO-mWVO7BX8Av00xWjAYfTRC", // RIVH @martinsrec-249 — 12MB
+  "1s7_iL4vNfrEXocuN3gZ7FpDisEog3yb6", // RIVH @martinsrec-329 — 10.5MB
+  "1vwWxe-cRST2bafcMH7Rjsy4PindcwnPQ", // GALVÃO preto studio — 965KB
+  "1hccK4pFyhcKX0B1lNuT8x79WbldOUISx", // REVELATION 12 — estúdio
 ];
 
 const PACKAGES = [
