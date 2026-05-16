@@ -24,7 +24,7 @@ const PACKAGES = [
   {
     n: "01", name: "Essencial", price: "R$ 450",
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
-    items: ["40 minutos de sessão", "1 cenário de sua escolha", "Direção completa de poses", "Fotos editadas em até 7 dias"],
+    items: ["40 minutos de sessão", "Estúdio fundo branco", "Direção completa de poses", "Fotos editadas em até 7 dias"],
     ideal: "LinkedIn · perfil profissional · imagem corporativa",
   },
   {
