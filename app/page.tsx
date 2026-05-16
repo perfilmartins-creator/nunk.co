@@ -28,7 +28,7 @@ const PACKAGES = [
     price: "R$ 450",
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
     items: ["40 minutos de sessão", "1 cenário de sua escolha", "Direção completa de poses", "Fotos editadas em até 7 dias"],
-    ideal: "LinkedIn · headshot · perfil profissional",
+    ideal: "LinkedIn · perfil profissional · imagem corporativa",
   },
   {
     n: "02",
@@ -121,7 +121,7 @@ export default function Home() {
           Num mundo saturado de imagens artificiais,<br />a sua presença real é o diferencial.
         </p>
         <p style={{ fontSize: "clamp(16px, 1.8vw, 22px)", fontWeight: 300, opacity: 0.35, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-          A NUNK é uma marca de fotografia humanizada, baseada em Recife. Trabalhamos com profissionais, criadores e marcas que entendem que autenticidade não se fabrica — se captura.
+          Cada pessoa carrega uma presença única. A NUNK existe para registrar isso — com direção, intenção e cuidado — para profissionais, criadores e marcas que levam a própria imagem a sério.
         </p>
       </section>
 
