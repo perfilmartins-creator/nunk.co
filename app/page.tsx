@@ -31,8 +31,8 @@ const PACKAGES = [
 const MARQUEE_ITEMS = ["Fotografia Humanizada", "Recife, PE", "Profissionais", "Marcas", "Criadores", "Editorial", "Campanha"];
 
 const s = {
-  label: { fontSize: 10, letterSpacing: "0.55em", textTransform: "uppercase" as const, fontWeight: 700, opacity: 0.2 },
-  navLink: { fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase" as const, fontWeight: 500, opacity: 0.35, transition: "opacity 0.2s", textDecoration: "none", color: "#f0f0f0" } as React.CSSProperties,
+  label: { fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase" as const, fontWeight: 700, opacity: 0.2 },
+  navLink: { fontSize: 12, letterSpacing: "0.28em", textTransform: "uppercase" as const, fontWeight: 500, opacity: 0.35, transition: "opacity 0.2s", textDecoration: "none", color: "#f0f0f0" } as React.CSSProperties,
 };
 
 export default function Home() {
@@ -85,7 +85,7 @@ export default function Home() {
           <a href="#galeria" style={s.navLink} onMouseEnter={e => (e.currentTarget.style.opacity="1")} onMouseLeave={e => (e.currentTarget.style.opacity="0.35")}>Trabalhos</a>
           <a href="#sessoes" style={s.navLink} onMouseEnter={e => (e.currentTarget.style.opacity="1")} onMouseLeave={e => (e.currentTarget.style.opacity="0.35")}>Sessões</a>
         </div>
-        <span style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", fontSize: 13, letterSpacing: "0.6em", textTransform: "uppercase", fontWeight: 700 }}>
+        <span style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", fontSize: 15, letterSpacing: "0.6em", textTransform: "uppercase", fontWeight: 700 }}>
           NUNK
         </span>
         <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
@@ -103,16 +103,16 @@ export default function Home() {
             fotografia<br />
             <span style={{ fontWeight: 200, opacity: 0.5 }}>humanizada</span>
           </h1>
-          <p style={{ marginTop: 40, fontSize: 11, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 500, opacity: 0.3 }}>
+          <p style={{ marginTop: 48, fontSize: 13, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 500, opacity: 0.3 }}>
             NUNK · Recife, PE
           </p>
         </div>
       </section>
 
       {/* GALERIA */}
-      <section id="galeria" style={{ display: "block", width: "100%", paddingTop: 96, paddingBottom: 64 }}>
-        <p style={{ ...s.label, textAlign: "center", marginBottom: 48, display: "block" }}>Trabalhos</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 2, padding: "0 2px" }}>
+      <section id="galeria" style={{ display: "block", width: "100%", paddingTop: 96, paddingBottom: 48 }}>
+        <p style={{ ...s.label, textAlign: "center", marginBottom: 40, display: "block" }}>Trabalhos</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 2, padding: "0 2px" }}>
           {GALLERY.map((id, i) => (
             <div key={id} style={{ aspectRatio: "2/3", overflow: "hidden" }}>
               <img
@@ -162,19 +162,19 @@ export default function Home() {
               <div style={{ display: "flex", gap: 20, alignItems: "flex-start", minWidth: 0 }}>
                 <span style={{ fontSize: 10, fontWeight: 700, opacity: 0.15, marginTop: 3, flexShrink: 0 }}>{pkg.n}</span>
                 <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: "-0.01em" }}>{pkg.name}</span>
-                    {pkg.pop && <span style={{ fontSize: 8, letterSpacing: "0.15em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.15)", padding: "1px 8px", opacity: 0.3 }}>popular</span>}
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <span style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.01em" }}>{pkg.name}</span>
+                    {pkg.pop && <span style={{ fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.15)", padding: "2px 8px", opacity: 0.3 }}>popular</span>}
                   </div>
-                  <p style={{ fontSize: 11, opacity: 0.25, marginTop: 4, lineHeight: 1.6 }}>{pkg.info}</p>
+                  <p style={{ fontSize: 13, opacity: 0.25, marginTop: 6, lineHeight: 1.6 }}>{pkg.info}</p>
                 </div>
               </div>
-              <span style={{ fontSize: 15, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>{pkg.price}</span>
+              <span style={{ fontSize: 18, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>{pkg.price}</span>
             </div>
           ))}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginBottom: 48 }} />
           <div style={{ textAlign: "center" }}>
-            <a href="#contato" style={{ display: "inline-block", padding: "16px 56px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
+            <a href="#contato" style={{ display: "inline-block", padding: "18px 64px", background: "#f0f0f0", color: "#050505", fontSize: 12, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}
             >
@@ -187,7 +187,7 @@ export default function Home() {
       {/* CONTATO */}
       <section id="contato" style={{ display: "block", width: "100%", padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <p style={{ ...s.label, textAlign: "center", marginBottom: 8, display: "block" }}>Contato</p>
-        <p style={{ textAlign: "center", fontSize: 11, opacity: 0.2, marginBottom: 56, letterSpacing: "0.05em" }}>Recife, PE · Responde em até 2h</p>
+        <p style={{ textAlign: "center", fontSize: 13, opacity: 0.2, marginBottom: 56, letterSpacing: "0.05em" }}>Recife, PE · Responde em até 2h</p>
         <form onSubmit={submit} style={{ maxWidth: 360, margin: "0 auto", display: "flex", flexDirection: "column", gap: 28 }}>
           {[
             { name: "nome",      placeholder: "Nome",       type: "text" },
@@ -196,13 +196,13 @@ export default function Home() {
             <input key={f.name} required type={f.type} placeholder={f.placeholder}
               value={(form as Record<string,string>)[f.name]}
               onChange={e => setForm(p => ({ ...p, [f.name]: e.target.value }))}
-              style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: "rgba(240,240,240,0.6)", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
+              style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "14px 0", fontSize: 14, fontWeight: 500, letterSpacing: "0.03em", color: "rgba(240,240,240,0.6)", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
               onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
               onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
             />
           ))}
           <select required value={form.pacote} onChange={e => setForm(p => ({ ...p, pacote: e.target.value }))}
-            style={{ background: "#050505", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: form.pacote ? "rgba(240,240,240,0.6)" : "rgba(240,240,240,0.15)", outline: "none", fontFamily: "inherit", appearance: "none", transition: "border-color 0.2s" }}
+            style={{ background: "#050505", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "14px 0", fontSize: 14, fontWeight: 500, letterSpacing: "0.03em", color: form.pacote ? "rgba(240,240,240,0.6)" : "rgba(240,240,240,0.15)", outline: "none", fontFamily: "inherit", appearance: "none", transition: "border-color 0.2s" }}
             onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
             onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
           >
@@ -213,11 +213,11 @@ export default function Home() {
             <option value="Ainda não sei">Ainda não sei</option>
           </select>
           <textarea placeholder="Mensagem (opcional)" rows={2} value={form.msg} onChange={e => setForm(p => ({ ...p, msg: e.target.value }))}
-            style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: "rgba(240,240,240,0.6)", outline: "none", resize: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
+            style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "14px 0", fontSize: 14, fontWeight: 500, letterSpacing: "0.03em", color: "rgba(240,240,240,0.6)", outline: "none", resize: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
             onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
             onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
           />
-          <button type="submit" style={{ width: "100%", padding: "16px", background: "#f0f0f0", color: "#050505", fontSize: 10, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, border: "none", fontFamily: "inherit", transition: "background 0.2s", marginTop: 8 }}
+          <button type="submit" style={{ width: "100%", padding: "18px", background: "#f0f0f0", color: "#050505", fontSize: 12, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, border: "none", fontFamily: "inherit", transition: "background 0.2s", marginTop: 8 }}
             onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
             onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}
           >
@@ -228,8 +228,8 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 64px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <span style={{ fontSize: 11, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>NUNK</span>
-        <span style={{ fontSize: 11, fontWeight: 500, opacity: 0.15 }}>© 2026 · Recife</span>
+        <span style={{ fontSize: 13, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>NUNK</span>
+        <span style={{ fontSize: 13, fontWeight: 500, opacity: 0.15 }}>© 2026 · Recife</span>
       </footer>
     </>
   );
