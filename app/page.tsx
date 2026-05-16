@@ -7,18 +7,18 @@ const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 // Hero uses local file from public/
 
 const GALLERY = [
-  "1JUyC7xTbJwKaHmfRN4bSfSh7Ci6LBx3I", // BIANCA-93 — 17MB, editorial 2025
-  "1iBgn05m2uoPWqlYybeUOyDn8xO7QfVfP", // BIANCA-90 — 16MB, look alternativo
-  "1lwKJuh-L57hNRkwR3cttmVS8kvNMEaev", // BIANCA-86 — 16MB
-  "1lPUleiIBCaN5rzX4Uv0HxVmfyoACbM1z", // ALICE DSC01601 — 14.5MB
-  "1FB3yfkkIRudsYfEnjbwtlccSfVqorS49", // ALICE DSC01549 — 14.8MB
-  "1OjF90oXFqUeXbi81c0-5NGJXIKj45r3u", // ALICE DSC01638 — 12.6MB
-  "1Iu6G4RAVc248nTY5Kfo1VO5_awCXXn-g", // LIVIA & JÚLIA _DSC7451 — 11MB
-  "13lUDq5up5KuIwgA9aQmZLJQu-gi37cfM", // LIVIA & JÚLIA _DSC7435 — 12MB
-  "1MBnVVO5PvO-mWVO7BX8Av00xWjAYfTRC", // RIVH @martinsrec-249 — 12MB
-  "1s7_iL4vNfrEXocuN3gZ7FpDisEog3yb6", // RIVH @martinsrec-329 — 10.5MB
-  "1vwWxe-cRST2bafcMH7Rjsy4PindcwnPQ", // GALVÃO preto studio — 965KB
-  "1hccK4pFyhcKX0B1lNuT8x79WbldOUISx", // REVELATION 12 — estúdio
+  "1MBnVVO5PvO-mWVO7BX8Av00xWjAYfTRC", // RIVH — grupo 4 modelos fundo preto
+  "1FpjiUuSrywjMeXMvGm-m7AzuOiskIRlA", // NIZ+COSTAVINOO — joia/fashion
+  "1JUyC7xTbJwKaHmfRN4bSfSh7Ci6LBx3I", // BIANCA — editorial feminino 2025
+  "1lPUleiIBCaN5rzX4Uv0HxVmfyoACbM1z", // ALICE SANT'ANNA — feminino studio 2024
+  "1Iu6G4RAVc248nTY5Kfo1VO5_awCXXn-g", // LIVIA & JÚLIA — duo feminino
+  "1vwWxe-cRST2bafcMH7Rjsy4PindcwnPQ", // GALVÃO — masculino fundo preto
+  "1xINUgZcIj8OhHSBPIdsau8NvLb2wFfVY", // EURICO — masculino fundo branco
+  "1haRvsJ-HDjIbXrHxIGrvuVzqcnYOFpHS", // BRUNO CADENA — profissional masculino
+  "1jm-d1tXHjTE507oL7Gh9sBOykyICTrGq", // FELIPE & EDUARDA — casal fundo preto
+  "1j9YeeM-au-ErouyC88zpfKdeVdWmwmOY", // REVELATION — studio duo
+  "1lEP7u4vzcLJbB6fwoelZ3nyLx464hgxx", // THAIS — feminino fundo vermelho
+  "1t4ZeHxmP_egEV3z8U2v73x-ybc-Eddmj", // DANI — feminino studio close
 ];
 
 const PACKAGES = [
