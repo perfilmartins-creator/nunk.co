@@ -1,6 +1,8 @@
 import Loader from "./components/Loader";
 import Reveal from "./components/Reveal";
 import ContactForm from "./components/ContactForm";
+import Marquee from "./components/Marquee";
+import Cursor from "./components/Cursor";
 
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
@@ -24,6 +26,7 @@ export default function Home() {
   return (
     <>
       <Loader />
+      <Cursor />
 
       {/* ── NAV ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-10 md:px-16 py-7"
@@ -146,6 +149,9 @@ export default function Home() {
           </a>
         </Reveal>
       </section>
+
+      {/* ── MARQUEE ── */}
+      <Marquee className="mb-0" />
 
       {/* ── SESSÕES — centro ── */}
       <section id="sessoes" className="pb-40 border-t border-white/06">

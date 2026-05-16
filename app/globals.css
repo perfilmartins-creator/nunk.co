@@ -18,6 +18,10 @@ body {
 
 ::selection { background: rgba(255,255,255,0.1); }
 
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
 /* Image hover scale */
 .img-wrap { overflow: hidden; }
 .img-wrap img {
