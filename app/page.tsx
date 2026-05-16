@@ -16,7 +16,7 @@ const GALLERY = [
   "1haRvsJ-HDjIbXrHxIGrvuVzqcnYOFpHS",
   "1jm-d1tXHjTE507oL7Gh9sBOykyICTrGq",
   "1j9YeeM-au-ErouyC88zpfKdeVdWmwmOY",
-  "1lEP7u4vzcLJbB6fwoelZ3nyLx464hgxx",
+  "1ZuIhExKOqMGf-SvhvjbYsPzds6CJBCRB",
   "1t4ZeHxmP_egEV3z8U2v73x-ybc-Eddmj",
 ];
 
