@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 
 function gdrive(id: string) {
@@ -68,13 +67,11 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={gdrive(HERO_ID)}
             alt="Sessão fotográfica NUNK"
-            fill
-            className="object-cover object-center"
-            priority
-            unoptimized
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-transparent to-transparent" />
