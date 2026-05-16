@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-        <img src="/hero.jpg" alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 5%", filter: "grayscale(100%)" }} />
+        <img src="/hero.jpg" alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 15%", filter: "grayscale(100%)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.25) 100%)" }} />
         <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 32px" }}>
           <h1 style={{ fontSize: "clamp(64px, 10vw, 148px)", fontWeight: 700, lineHeight: 0.88, letterSpacing: "-0.02em", margin: 0 }}>
