@@ -24,7 +24,7 @@ const PACKAGES = [
   {
     n: "01", name: "Essencial", price: "R$ 450",
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
-    items: ["40 minutos de sessão", "Estúdio fundo branco", "Direção completa de poses", "Fotos editadas em até 7 dias"],
+    items: ["40 minutos de sessão", "Estúdio fundo branco", "Direção completa de poses", "Fotos editadas em até 5 dias"],
     ideal: "LinkedIn · perfil profissional · imagem corporativa",
   },
   {
@@ -88,6 +88,9 @@ export default function Home() {
         /* HERO CTA */
         .hero-cta { display: inline-block; margin-top: 56px; padding: 18px 48px; }
 
+        /* HERO IMG */
+        .hero-img { object-position: 60% 15%; }
+
         /* FOOTER */
         .footer { display: flex; align-items: center; justify-content: space-between; padding: 36px var(--pad-x); border-top: 1px solid rgba(255,255,255,0.06); }
 
@@ -116,6 +119,7 @@ export default function Home() {
 
           /* Hero */
           .hero-cta { display: block; width: 100%; text-align: center; padding: 18px 24px; margin-top: 40px; box-sizing: border-box; }
+          .hero-img { object-position: 52% 8%; }
 
           /* Footer */
           .footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
@@ -157,7 +161,7 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-        <img src="/hero.jpg" alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 15%", filter: "grayscale(100%)" }} />
+        <img src="/hero.jpg" alt="NUNK" className="hero-img" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.25) 100%)" }} />
         <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 24px", width: "100%" }}>
           <h1 style={{ fontSize: "clamp(52px, 10vw, 148px)", fontWeight: 700, lineHeight: 0.88, letterSpacing: "-0.02em", margin: 0 }}>
@@ -195,7 +199,7 @@ export default function Home() {
           {[...MARQUEE_WORDS, ...MARQUEE_WORDS].map((w, i) => (
             <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 64 }}>
               <span style={{ fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>{w}</span>
-              <span style={{ opacity: 0.12, fontSize: 6 }}>◆</span>
+              <span style={{ opacity: 0.12, fontSize: 6, fontFamily: "sans-serif" }}>·</span>
             </span>
           ))}
         </motion.div>
@@ -208,7 +212,7 @@ export default function Home() {
           <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
             style={{ fontSize: 12, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2, textDecoration: "none", color: "#f0f0f0", transition: "opacity 0.2s" }}
             onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.2")}>
-            Instagram ↗
+            Instagram
           </a>
         </div>
         <div className="gallery-grid">
@@ -227,11 +231,17 @@ export default function Home() {
       <section id="sessoes" className="section-pad" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div className="sessions-header">
           <span style={{ fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>Sessões</span>
-          <span style={{ fontSize: 13, opacity: 0.2 }}>Recife, PE · Estúdio ou locação</span>
+          <span style={{ fontSize: 13, opacity: 0.2 }}>Recife, PE</span>
         </div>
         <div className="sessions-grid">
           {PACKAGES.map((pkg) => (
-            <div key={pkg.n} style={{ padding: "40px 32px", border: "1px solid rgba(255,255,255,0.07)", display: "flex", flexDirection: "column", position: "relative" }}>
+            <div key={pkg.n} style={{
+              padding: "40px 32px",
+              border: pkg.pop ? "1px solid rgba(255,255,255,0.28)" : pkg.n === "03" ? "none" : "1px solid rgba(255,255,255,0.07)",
+              borderTop: pkg.n === "03" ? "1px solid rgba(255,255,255,0.07)" : undefined,
+              background: pkg.pop ? "rgba(255,255,255,0.03)" : "transparent",
+              display: "flex", flexDirection: "column", position: "relative"
+            }}>
               {pkg.pop && <span style={{ position: "absolute", top: 20, right: 20, fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.15)", padding: "3px 10px", opacity: 0.35 }}>popular</span>}
               <span style={{ fontSize: 11, fontWeight: 700, opacity: 0.18, marginBottom: 20, letterSpacing: "0.1em" }}>{pkg.n}</span>
               <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.01em", marginBottom: 8 }}>{pkg.name}</h3>
@@ -247,7 +257,7 @@ export default function Home() {
               <p style={{ fontSize: 11, opacity: 0.2, letterSpacing: "0.08em", marginBottom: 32 }}>Ideal para: {pkg.ideal}</p>
               <div style={{ marginTop: "auto", display: "flex", alignItems: "baseline", justifyContent: "space-between", paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                 <span style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em" }}>{pkg.price}</span>
-                <a href="#contato" style={{ fontSize: 11, letterSpacing: "0.35em", textTransform: "uppercase", fontWeight: 700, color: "#f0f0f0", opacity: 0.4, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.4")}>Solicitar →</a>
+                <a href="#contato" style={{ fontSize: 11, letterSpacing: "0.35em", textTransform: "uppercase", fontWeight: 700, color: "#f0f0f0", opacity: 0.4, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.4")}>Solicitar</a>
               </div>
             </div>
           ))}
@@ -283,9 +293,9 @@ export default function Home() {
               Conta pra gente o que você precisa. Respondemos em até 2 horas e montamos juntos a sessão ideal para o seu objetivo.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {["Recife, PE · Estúdio ou locação", "Resposta em até 2 horas", "@nunk.co no Instagram"].map(txt => (
+              {["Recife, PE", "Resposta em até 2 horas", "@nunk.co no Instagram"].map(txt => (
                 <p key={txt} style={{ fontSize: 13, opacity: 0.25, display: "flex", gap: 10, alignItems: "center" }}>
-                  <span style={{ opacity: 0.5 }}>→</span> {txt}
+                  <span style={{ opacity: 0.5 }}>—</span> {txt}
                 </p>
               ))}
             </div>
