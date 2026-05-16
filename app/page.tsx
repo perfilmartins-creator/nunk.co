@@ -30,7 +30,7 @@ const PACKAGES = [
   {
     n: "02", name: "Editorial", price: "R$ 600",
     tagline: "Para quem quer construir uma identidade visual sólida e autêntica.",
-    items: ["1h30 de sessão", "Looks ilimitados", "Todas as fotos editadas", "Direção criativa e de estilo", "Entrega em até 10 dias"],
+    items: ["1h30 de sessão", "Looks ilimitados", "Todas as fotos editadas", "Direção criativa e de estilo", "Entrega em até 48 horas"],
     ideal: "feed · branding pessoal · conteúdo digital",
     pop: true,
   },
