@@ -1,10 +1,11 @@
-import Loader from "./components/Loader";
-import Reveal from "./components/Reveal";
-import ContactForm from "./components/ContactForm";
-import Marquee from "./components/Marquee";
-import Cursor from "./components/Cursor";
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const G = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
+
+const HERO_IMG  = "1pAgVVU0Xdv2dArfXkdZg9bdT7r9p6UXv";
 
 const GALLERY = [
   "1hEptcjLKcmy-_eyGrwzABcav7ljFRsoX",
@@ -22,141 +23,214 @@ const GALLERY = [
 ];
 
 const PACKAGES = [
-  { num: "01", name: "Essencial",  price: "R$ 450",   info: "40 min · 1 cenário · direção de poses" },
-  { num: "02", name: "Editorial",  price: "R$ 600",   info: "1h30 · looks ilimitados · todas as fotos editadas", featured: true },
-  { num: "03", name: "Campanha",   price: "Consulta", info: "Editorial completo + 2 vídeos + making of" },
+  { n: "01", name: "Essencial",  price: "R$ 450",   info: "40 min · 1 cenário · direção de poses" },
+  { n: "02", name: "Editorial",  price: "R$ 600",   info: "1h30 · looks ilimitados · todas as fotos editadas", pop: true },
+  { n: "03", name: "Campanha",   price: "Consulta", info: "Editorial completo + 2 vídeos + making of" },
 ];
 
+const MARQUEE_ITEMS = ["Fotografia Humanizada", "Recife, PE", "Profissionais", "Marcas", "Criadores", "Editorial", "Campanha"];
+
+const s = {
+  label: { fontSize: 10, letterSpacing: "0.55em", textTransform: "uppercase" as const, fontWeight: 700, opacity: 0.2 },
+  navLink: { fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase" as const, fontWeight: 500, opacity: 0.35, transition: "opacity 0.2s", textDecoration: "none", color: "#f0f0f0" } as React.CSSProperties,
+};
+
 export default function Home() {
+  const [ready, setReady] = useState(false);
+  const [form, setForm] = useState({ nome: "", whatsapp: "", pacote: "", msg: "" });
+
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 2300);
+    return () => clearTimeout(t);
+  }, []);
+
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    const txt = `Olá! Vim pelo site da NUNK.\n\nNome: ${form.nome}\nPacote: ${form.pacote}${form.msg ? `\n\n${form.msg}` : ""}`;
+    window.open(`https://wa.me/558199999999?text=${encodeURIComponent(txt)}`, "_blank");
+  }
+
   return (
-    <div className="w-full">
-      <Loader />
-      <Cursor />
+    <>
+      {/* LOADER */}
+      <AnimatePresence>
+        {!ready && (
+          <motion.div
+            key="loader"
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+            style={{ position: "fixed", inset: 0, zIndex: 500, background: "#050505", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
+          >
+            <div style={{ overflow: "hidden" }}>
+              <motion.span
+                initial={{ y: "100%" }} animate={{ y: 0 }}
+                transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+                style={{ display: "block", fontSize: 13, letterSpacing: "0.6em", textTransform: "uppercase", fontWeight: 600, color: "rgba(240,240,240,0.8)" }}
+              >
+                NUNK
+              </motion.span>
+            </div>
+            <motion.div
+              initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+              transition={{ duration: 1.6, ease: "linear", delay: 0.3 }}
+              style={{ marginTop: 24, height: 1, width: 48, background: "rgba(255,255,255,0.2)", transformOrigin: "left" }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 md:px-16 py-7"
-        style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, transparent 100%)" }}>
-        <div className="flex gap-8">
-          <a href="#trabalhos" className="nav-link">Trabalhos</a>
-          <a href="#sessoes"   className="nav-link">Sessões</a>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, padding: "28px 64px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, transparent 100%)" }}>
+        <div style={{ display: "flex", gap: 32 }}>
+          <a href="#galeria" style={s.navLink} onMouseEnter={e => (e.currentTarget.style.opacity="1")} onMouseLeave={e => (e.currentTarget.style.opacity="0.35")}>Trabalhos</a>
+          <a href="#sessoes" style={s.navLink} onMouseEnter={e => (e.currentTarget.style.opacity="1")} onMouseLeave={e => (e.currentTarget.style.opacity="0.35")}>Sessões</a>
         </div>
-        <span className="absolute left-1/2 -translate-x-1/2 text-[13px] tracking-[0.6em] uppercase font-bold">NUNK</span>
-        <div className="flex gap-8">
-          <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer" className="nav-link">Instagram</a>
-          <a href="#contato" className="nav-link border border-white/20 px-5 py-2.5 hover:border-white/50">Contato</a>
+        <span style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", fontSize: 13, letterSpacing: "0.6em", textTransform: "uppercase", fontWeight: 700 }}>
+          NUNK
+        </span>
+        <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
+          <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer" style={s.navLink} onMouseEnter={e => (e.currentTarget.style.opacity="1")} onMouseLeave={e => (e.currentTarget.style.opacity="0.35")}>Instagram</a>
+          <a href="#contato" style={{ ...s.navLink, border: "1px solid rgba(255,255,255,0.2)", padding: "10px 20px" }} onMouseEnter={e => { e.currentTarget.style.opacity="1"; e.currentTarget.style.borderColor="rgba(255,255,255,0.5)"; }} onMouseLeave={e => { e.currentTarget.style.opacity="0.35"; e.currentTarget.style.borderColor="rgba(255,255,255,0.2)"; }}>Contato</a>
         </div>
       </nav>
 
-      {/* HERO — keep exactly */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img
-          src={G("1pAgVVU0Xdv2dArfXkdZg9bdT7r9p6UXv")}
-          alt="NUNK"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "50% 35%" }}
-        />
-        <div className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.55) 100%)" }} />
-        <div className="relative z-10 text-center px-6">
-          <h1 className="text-[clamp(56px,9vw,130px)] font-bold leading-[0.9] tracking-tight">
+      {/* HERO */}
+      <section style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+        <img src={G(HERO_IMG)} alt="NUNK" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.55) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 24px" }}>
+          <h1 style={{ fontSize: "clamp(56px, 9vw, 130px)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", margin: 0 }}>
             fotografia<br />
-            <span className="font-extralight opacity-50">humanizada</span>
+            <span style={{ fontWeight: 200, opacity: 0.5 }}>humanizada</span>
           </h1>
-          <p className="mt-10 text-[11px] tracking-[0.5em] uppercase font-medium opacity-30">
+          <p style={{ marginTop: 40, fontSize: 11, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 500, opacity: 0.3 }}>
             NUNK · Recife, PE
           </p>
         </div>
       </section>
 
       {/* GALERIA */}
-      <section id="trabalhos" className="w-full pt-28 pb-10">
-        <Reveal>
-          <p className="text-center text-[10px] tracking-[0.55em] uppercase font-bold opacity-20 mb-12">Trabalhos</p>
-        </Reveal>
-        <div className="grid grid-cols-4 gap-0.5 px-0.5">
+      <section id="galeria" style={{ display: "block", width: "100%", paddingTop: 96, paddingBottom: 64 }}>
+        <p style={{ ...s.label, textAlign: "center", marginBottom: 48, display: "block" }}>Trabalhos</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 2, padding: "0 2px" }}>
           {GALLERY.map((id, i) => (
-            <div key={id} className="img-wrap" style={{ aspectRatio: "2/3" }}>
+            <div key={id} style={{ aspectRatio: "2/3", overflow: "hidden" }}>
               <img
                 src={G(id)}
                 alt={`NUNK ${i + 1}`}
                 loading="lazy"
-                className="w-full h-full object-cover block"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 1.1s cubic-bezier(0.16,1,0.3,1)" }}
+                onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
+                onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
               />
             </div>
           ))}
         </div>
-        <Reveal delay={0.1}>
-          <p className="text-center mt-10">
-            <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
-              className="text-[10px] tracking-[0.5em] uppercase font-bold opacity-20 hover:opacity-60 transition-opacity">
-              Ver mais no Instagram ↗
-            </a>
-          </p>
-        </Reveal>
+        <p style={{ textAlign: "center", marginTop: 40 }}>
+          <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
+            style={{ ...s.label, textDecoration: "none", color: "#f0f0f0", transition: "opacity 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "0.6")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "0.2")}
+          >
+            Ver mais no Instagram ↗
+          </a>
+        </p>
       </section>
 
       {/* MARQUEE */}
-      <Marquee className="my-20" />
+      <div style={{ overflow: "hidden", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "18px 0", margin: "48px 0" }}>
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 24, ease: "linear", repeat: Infinity }}
+          style={{ display: "flex", gap: 64, whiteSpace: "nowrap", width: "max-content" }}
+        >
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((w, i) => (
+            <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 64 }}>
+              <span style={s.label}>{w}</span>
+              <span style={{ opacity: 0.1, fontSize: 6 }}>◆</span>
+            </span>
+          ))}
+        </motion.div>
+      </div>
 
       {/* SESSÕES */}
-      <section id="sessoes" className="w-full py-28 px-6">
-        <Reveal>
-          <p className="text-center text-[10px] tracking-[0.55em] uppercase font-bold opacity-20 mb-20">Sessões</p>
-        </Reveal>
-        <div className="max-w-xl mx-auto">
-          {PACKAGES.map((pkg, i) => (
-            <Reveal key={pkg.num} delay={i * 0.07}>
-              <div className="flex items-start justify-between gap-8 py-7 border-t border-white/08 hover:border-white/20 transition-colors">
-                <div className="flex gap-5 items-start">
-                  <span className="text-[10px] font-bold opacity-15 mt-1 shrink-0">{pkg.num}</span>
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-[15px] font-bold tracking-tight">{pkg.name}</span>
-                      {pkg.featured && (
-                        <span className="text-[8px] tracking-widest uppercase border border-white/15 px-2 py-px opacity-30">
-                          popular
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-[11px] opacity-25 mt-1 leading-relaxed">{pkg.info}</p>
+      <section id="sessoes" style={{ display: "block", width: "100%", padding: "80px 24px" }}>
+        <p style={{ ...s.label, textAlign: "center", marginBottom: 64, display: "block" }}>Sessões</p>
+        <div style={{ maxWidth: 560, margin: "0 auto" }}>
+          {PACKAGES.map((pkg) => (
+            <div key={pkg.n} style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 24, padding: "28px 0", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+              <div style={{ display: "flex", gap: 20, alignItems: "flex-start", minWidth: 0 }}>
+                <span style={{ fontSize: 10, fontWeight: 700, opacity: 0.15, marginTop: 3, flexShrink: 0 }}>{pkg.n}</span>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: "-0.01em" }}>{pkg.name}</span>
+                    {pkg.pop && <span style={{ fontSize: 8, letterSpacing: "0.15em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.15)", padding: "1px 8px", opacity: 0.3 }}>popular</span>}
                   </div>
+                  <p style={{ fontSize: 11, opacity: 0.25, marginTop: 4, lineHeight: 1.6 }}>{pkg.info}</p>
                 </div>
-                <span className="text-[15px] font-bold shrink-0 mt-0.5">{pkg.price}</span>
               </div>
-            </Reveal>
-          ))}
-          <div className="border-t border-white/08 mb-14" />
-          <Reveal delay={0.25}>
-            <div className="text-center">
-              <a href="#contato"
-                className="inline-block py-4 px-14 bg-white text-black text-[11px] tracking-[0.45em] uppercase font-bold hover:bg-white/85 transition-colors">
-                Solicitar sessão
-              </a>
+              <span style={{ fontSize: 15, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>{pkg.price}</span>
             </div>
-          </Reveal>
+          ))}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginBottom: 48 }} />
+          <div style={{ textAlign: "center" }}>
+            <a href="#contato" style={{ display: "inline-block", padding: "16px 56px", background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}
+            >
+              Solicitar sessão
+            </a>
+          </div>
         </div>
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="w-full py-28 px-6 border-t border-white/06">
-        <Reveal>
-          <p className="text-center text-[10px] tracking-[0.55em] uppercase font-bold opacity-20 mb-3">Contato</p>
-          <p className="text-center text-[11px] font-medium opacity-20 tracking-wide mb-16">
-            Recife, PE · Responde em até 2h
-          </p>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="max-w-sm mx-auto">
-            <ContactForm />
-          </div>
-        </Reveal>
+      <section id="contato" style={{ display: "block", width: "100%", padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <p style={{ ...s.label, textAlign: "center", marginBottom: 8, display: "block" }}>Contato</p>
+        <p style={{ textAlign: "center", fontSize: 11, opacity: 0.2, marginBottom: 56, letterSpacing: "0.05em" }}>Recife, PE · Responde em até 2h</p>
+        <form onSubmit={submit} style={{ maxWidth: 360, margin: "0 auto", display: "flex", flexDirection: "column", gap: 28 }}>
+          {[
+            { name: "nome",      placeholder: "Nome",       type: "text" },
+            { name: "whatsapp",  placeholder: "WhatsApp",   type: "tel"  },
+          ].map(f => (
+            <input key={f.name} required type={f.type} placeholder={f.placeholder}
+              value={(form as Record<string,string>)[f.name]}
+              onChange={e => setForm(p => ({ ...p, [f.name]: e.target.value }))}
+              style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: "rgba(240,240,240,0.6)", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
+              onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
+              onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
+            />
+          ))}
+          <select required value={form.pacote} onChange={e => setForm(p => ({ ...p, pacote: e.target.value }))}
+            style={{ background: "#050505", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: form.pacote ? "rgba(240,240,240,0.6)" : "rgba(240,240,240,0.15)", outline: "none", fontFamily: "inherit", appearance: "none", transition: "border-color 0.2s" }}
+            onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
+            onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
+          >
+            <option value="" disabled>Pacote de interesse</option>
+            <option value="Essencial — R$ 450">Essencial — R$ 450</option>
+            <option value="Editorial — R$ 600">Editorial — R$ 600</option>
+            <option value="Campanha">Campanha</option>
+            <option value="Ainda não sei">Ainda não sei</option>
+          </select>
+          <textarea placeholder="Mensagem (opcional)" rows={2} value={form.msg} onChange={e => setForm(p => ({ ...p, msg: e.target.value }))}
+            style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "12px 0", fontSize: 12, fontWeight: 500, letterSpacing: "0.05em", color: "rgba(240,240,240,0.6)", outline: "none", resize: "none", fontFamily: "inherit", transition: "border-color 0.2s" }}
+            onFocus={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.3)")}
+            onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.1)")}
+          />
+          <button type="submit" style={{ width: "100%", padding: "16px", background: "#f0f0f0", color: "#050505", fontSize: 10, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, border: "none", fontFamily: "inherit", transition: "background 0.2s", marginTop: 8 }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}
+          >
+            Solicitar via WhatsApp
+          </button>
+        </form>
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full px-10 md:px-16 py-8 border-t border-white/06 flex items-center justify-between">
-        <span className="text-[11px] tracking-[0.5em] uppercase font-bold opacity-20">NUNK</span>
-        <span className="text-[11px] font-medium opacity-15">© 2026 · Recife</span>
+      <footer style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 64px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <span style={{ fontSize: 11, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>NUNK</span>
+        <span style={{ fontSize: 11, fontWeight: 500, opacity: 0.15 }}>© 2026 · Recife</span>
       </footer>
-    </div>
+    </>
   );
 }
