@@ -9,10 +9,10 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "NUNK — Fotografia · Recife",
+  title: "NUNK",
   description: "Fotografia humanizada para profissionais, criadores e marcas em Recife.",
   openGraph: {
-    title: "NUNK — Fotografia · Recife",
+    title: "NUNK",
     description: "Fotografia humanizada para profissionais, criadores e marcas.",
     type: "website",
   },
