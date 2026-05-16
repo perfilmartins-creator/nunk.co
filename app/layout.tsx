@@ -11,6 +11,14 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "NUNK",
   description: "Fotografia humanizada para profissionais, criadores e marcas em Recife.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "NUNK",
     description: "Fotografia humanizada para profissionais, criadores e marcas.",
