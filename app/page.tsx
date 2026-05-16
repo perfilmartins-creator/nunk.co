@@ -106,6 +106,12 @@ export default function Home() {
           <p style={{ marginTop: 48, fontSize: 14, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 500, opacity: 0.3 }}>
             NUNK · Recife, PE
           </p>
+          <a href="#contato"
+            style={{ display: "inline-block", marginTop: 56, padding: "18px 48px", background: "#f0f0f0", color: "#050505", fontSize: 12, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
+            Quero agendar meu ensaio
+          </a>
         </div>
       </section>
 
