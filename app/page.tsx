@@ -68,7 +68,7 @@ export default function Home() {
   function submit(e: React.FormEvent) {
     e.preventDefault();
     const txt = `Olá! Vim pelo site da NUNK.\n\nNome: ${form.nome}\nPacote: ${form.pacote}${form.msg ? `\n\n${form.msg}` : ""}`;
-    window.open(`https://wa.me/558199999999?text=${encodeURIComponent(txt)}`, "_blank");
+    window.open(`https://wa.me/5581986867591?text=${encodeURIComponent(txt)}`, "_blank");
   }
 
   const hover = (op: string) => (e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.opacity = op; };
