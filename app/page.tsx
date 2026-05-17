@@ -156,7 +156,7 @@ export default function Home() {
       <section id="trabalhos" style={{ paddingTop: "var(--pad-y)", paddingBottom: 80 }}>
         <Reveal>
           <div className="gallery-header">
-            <span style={{ fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2 }}>Trabalhos recentes</span>
+            <span style={{ fontSize: 12, letterSpacing: "0.5em", textTransform: "uppercase", fontWeight: 700, opacity: 0.5 }}>Trabalhos recentes</span>
             <a href="https://instagram.com/nunk.co" target="_blank" rel="noopener noreferrer"
               style={{ fontSize: 12, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 700, opacity: 0.2, textDecoration: "none", color: "#f0f0f0", transition: "opacity 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
