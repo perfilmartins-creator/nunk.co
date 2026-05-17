@@ -19,7 +19,7 @@ export const PACKAGES = [
   {
     n: "01",
     name: "Essencial",
-    price: "R$ 455",
+    price: "R$ 449,90",
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
     items: [
       "40 minutos de sessão",
@@ -34,7 +34,7 @@ export const PACKAGES = [
   {
     n: "02",
     name: "Editorial",
-    price: "R$ 700",
+    price: "R$ 699,90",
     tagline: "Para quem quer construir uma identidade visual sólida e autêntica.",
     items: [
       "1h de sessão",
