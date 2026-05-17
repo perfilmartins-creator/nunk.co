@@ -17,7 +17,7 @@ const TRACK = [...WORDS, ...WORDS];
 
 export default function Marquee({ className = "" }: { className?: string }) {
   return (
-    <div className={`overflow-hidden border-y border-white/06 py-5 ${className}`}>
+    <div className={`overflow-hidden border-y border-white/20 py-5 ${className}`}>
       <motion.div
         className="flex gap-20 whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
