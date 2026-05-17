@@ -10,7 +10,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "NUNK — Fotografia Humanizada · Recife",
+  title: "NUNK",
   description: "Fotografia humanizada para profissionais, criadores e marcas em Recife, PE.",
   icons: {
     icon: [
