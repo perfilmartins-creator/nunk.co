@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import "./globals.css";
+import ClientRoot from "./components/ClientRoot";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -9,8 +10,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "NUNK",
-  description: "Fotografia humanizada para profissionais, criadores e marcas em Recife.",
+  title: "NUNK — Fotografia Humanizada · Recife",
+  description: "Fotografia humanizada para profissionais, criadores e marcas em Recife, PE.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "NUNK",
-    description: "Fotografia humanizada para profissionais, criadores e marcas.",
+    title: "NUNK — Fotografia Humanizada",
+    description: "Fotografia humanizada para profissionais, criadores e marcas em Recife, PE.",
     type: "website",
   },
 };
@@ -29,7 +30,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${syne.variable} h-full`}>
-      <body className="min-h-full bg-[#050505] text-[#f0f0f0] antialiased">{children}</body>
+      <body className="min-h-full bg-[#050505] text-[#f0f0f0] antialiased">
+        <ClientRoot>{children}</ClientRoot>
+      </body>
     </html>
   );
 }
