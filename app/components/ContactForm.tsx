@@ -77,9 +77,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full py-6 text-[12px] tracking-[0.4em] uppercase font-bold bg-white text-black hover:bg-white/85 transition-colors mt-2"
+        className="w-full py-8 bg-white text-black hover:bg-white/85 transition-colors mt-2 flex items-center justify-between px-8 group"
       >
-        Solicitar via WhatsApp
+        <span className="text-[12px] tracking-[0.4em] uppercase font-bold">Solicitar via WhatsApp</span>
+        <span className="text-lg font-light transition-transform group-hover:translate-x-1">→</span>
       </button>
 
     </form>
