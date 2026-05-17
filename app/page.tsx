@@ -126,12 +126,20 @@ export default function Home() {
           <p style={{ marginTop: 40, fontSize: 13, letterSpacing: "0.45em", textTransform: "uppercase", fontWeight: 500, opacity: 0.3 }}>
             NUNK · Recife, PE
           </p>
-          <a href="#contato" className="hero-cta"
+          <a href={`https://wa.me/5581986867591?text=${encodeURIComponent("Olá! Vim pelo site da NUNK e quero agendar meu ensaio.")}`} target="_blank" rel="noopener noreferrer" className="hero-cta"
             style={{ background: "#f0f0f0", color: "#050505", fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, textDecoration: "none", transition: "background 0.2s" }}
             onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
             onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
             Quero agendar meu ensaio
           </a>
+          <div style={{ marginTop: 48, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <a href="#trabalhos" style={{ fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.3, color: "#f0f0f0", textDecoration: "none", transition: "opacity 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
+              onMouseLeave={e => (e.currentTarget.style.opacity = "0.3")}>
+              Ver portfólio
+            </a>
+            <span style={{ opacity: 0.2, fontSize: 16 }}>↓</span>
+          </div>
         </div>
       </section>
 
