@@ -23,7 +23,6 @@ export const PACKAGES = [
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
     items: [
       "40 minutos de sessão",
-      "Estúdio fundo branco",
       "Até 2 roupas",
       "Direção completa de poses",
       "30 fotos editadas em até 5 dias",
@@ -51,7 +50,7 @@ export const PACKAGES = [
     price: "Consulta",
     tagline: "Para quem precisa de conteúdo visual consistente todo mês.",
     items: [
-      "2 sessões mensais",
+      "Sessões personalizadas",
       "Até 8 looks por sessão",
       "Fotos e vídeos verticais editados",
       "Reels e conteúdo para stories",
