@@ -25,8 +25,8 @@ export default function Marquee({ className = "" }: { className?: string }) {
       >
         {TRACK.map((word, i) => (
           <span key={i} className="flex items-center gap-20 shrink-0">
-            <span className="text-[10px] tracking-[0.45em] uppercase font-bold opacity-15">{word}</span>
-            <span className="text-white/10 text-[6px]">◆</span>
+            <span className="text-[13px] tracking-[0.35em] uppercase font-bold opacity-15">{word}</span>
+            <span className="text-white/10 text-[8px]">◆</span>
           </span>
         ))}
       </motion.div>
