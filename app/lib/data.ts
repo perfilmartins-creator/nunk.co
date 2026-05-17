@@ -37,10 +37,9 @@ export const PACKAGES = [
     price: "R$ 700",
     tagline: "Para quem quer construir uma identidade visual sólida e autêntica.",
     items: [
-      "1h30 de sessão",
-      "Looks ilimitados",
+      "1h de sessão",
+      "Até 5 looks",
       "Todas as fotos editadas",
-      "Direção criativa e de estilo",
       "Entrega em até 48 horas",
     ],
     ideal: "feed · branding pessoal · conteúdo digital",
