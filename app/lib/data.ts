@@ -39,6 +39,7 @@ export const PACKAGES = [
     items: [
       "1h de sessão",
       "Até 5 looks",
+      "Direção completa de poses",
       "Todas as fotos editadas",
       "Entrega em até 24 horas",
     ],
