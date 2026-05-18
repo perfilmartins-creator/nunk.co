@@ -23,7 +23,7 @@ export const PACKAGES = [
     tagline: "Para quem quer uma imagem profissional, rápida e objetiva.",
     items: [
       "40 minutos de sessão",
-      "Até 2 roupas",
+      "Até 2 looks",
       "Direção completa de poses",
       "30 fotos editadas em até 5 dias",
     ],
