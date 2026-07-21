@@ -26,7 +26,7 @@ export const PACKAGES = [
       "Até 2 looks",
       "Direção completa de poses",
       "30 fotos editadas",
-      "Entrega em até 48 horas",
+      "Entrega em até 24 horas",
     ],
     ideal: "LinkedIn · perfil profissional · imagem corporativa",
     pop: false,

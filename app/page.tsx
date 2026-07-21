@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Marquee from "./components/Marquee";
 import Reveal from "./components/Reveal";
-import ContactForm from "./components/ContactForm";
-import { PORTFOLIO, PACKAGES, PROCESS } from "./lib/data";
+import { PORTFOLIO, PACKAGES, PROCESS, WHATSAPP } from "./lib/data";
 import { trackLead } from "./lib/fbq";
 
 export default function Home() {
@@ -281,7 +280,14 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <ContactForm />
+            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Vim pelo site da NUNK e quero agendar meu ensaio.")}`}
+              target="_blank" rel="noopener noreferrer"
+              onClick={trackLead}
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", padding: "80px 0", fontSize: 12, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, background: "#f0f0f0", color: "#050505", textDecoration: "none", transition: "background 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
+              Solicitar via WhatsApp
+            </a>
           </Reveal>
         </div>
       </section>
