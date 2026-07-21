@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PACKAGES, WHATSAPP } from "../lib/data";
+import { trackLead } from "../lib/fbq";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ nome: "", whatsapp: "", pacote: "", msg: "" });
@@ -13,6 +14,7 @@ export default function ContactForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const txt = `Olá! Vim pelo site da NUNK.\n\nNome: ${form.nome}\nPacote: ${form.pacote}${form.msg ? `\n\n${form.msg}` : ""}`;
+    trackLead();
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`, "_blank");
   }
 
