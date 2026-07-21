@@ -34,7 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${syne.variable} h-full`}>
       <body className="min-h-full bg-[#050505] text-[#f0f0f0] antialiased">
-        <Script id="meta-pixel" strategy="afterInteractive">
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="beforeInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             alt=""
           />
         </noscript>
+        {/* End Meta Pixel Code */}
         <ClientRoot>{children}</ClientRoot>
       </body>
     </html>
