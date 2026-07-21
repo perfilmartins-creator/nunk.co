@@ -31,6 +31,7 @@ export default function Home() {
         .process-header   { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 80px; }
 
         .hero-cta { display: inline-block; margin-top: 56px; padding: 18px 48px; }
+        .contact-cta { display: inline-block; padding: 20px 52px; }
         .hero-img { object-position: 60% 15%; }
         .footer   { display: flex; align-items: center; justify-content: space-between; padding: 36px var(--pad-x); border-top: 1px solid rgba(255,255,255,0.06); }
 
@@ -53,6 +54,7 @@ export default function Home() {
           .gallery-header  { padding: 0 var(--pad-x); margin-bottom: 28px; }
 
           .hero-cta { display: block; width: 100%; text-align: center; padding: 18px 24px; margin-top: 40px; box-sizing: border-box; }
+          .contact-cta { display: block; width: 100%; text-align: center; padding: 20px 24px; box-sizing: border-box; }
           .hero-img { object-position: 50% 30%; }
           .footer   { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
         }
@@ -281,9 +283,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Vim pelo site da NUNK e quero agendar meu ensaio.")}`}
-              target="_blank" rel="noopener noreferrer"
+              target="_blank" rel="noopener noreferrer" className="contact-cta"
               onClick={trackLead}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", padding: "80px 0", fontSize: 12, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, background: "#f0f0f0", color: "#050505", textDecoration: "none", transition: "background 0.2s" }}
+              style={{ fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 700, background: "#f0f0f0", color: "#050505", textDecoration: "none", transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(240,240,240,0.85)")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f0f0f0")}>
               Solicitar via WhatsApp
